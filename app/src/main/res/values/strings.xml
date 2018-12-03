@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">4Images1Mot</string>
+    <string name="cah">4Images1Mot</string>
+    <string name="Bb">4Images1Mot</string>
+    <string name="Aa">4Images1Mot</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="aa">A</string>
+    <string name="bb">B</string>
+    <string name="cc">C</string>
+    <string name="dd">D</string>
+    <string name="ee">E</string>
+    <string name="ff">F</string>
+    <string name="gg">G</string>
+    <string name="hh">H</string>
+    <string name="ii">I</string>
+    <string name="jj">J</string>
+    <string name="kk">K</string>
+    <string name="ll">L</string>
+    <string name="mm">M</string>
+    <string name="nn">N</string>
+    <string name="oo">O</string>
+    <string name="pp">P</string>
+    <string name="kkk">K</string>
+    <string name="rr">R</string>
+    <string name="ss">S</string>
+    <string name="tt">T</string>
+    <string name="vv">V</string>
+    <string name="uu">U</string>
+    <string name="ww">W</string>
+    <string name="xx">X</string>
+    <string name="yy">Y</string>
+    <string name="zz">Z</string>
+    <string name="ghiles">gg</string>
+
+</resources>
