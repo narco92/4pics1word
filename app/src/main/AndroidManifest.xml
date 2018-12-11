@@ -39,6 +39,41 @@
             android:label="@string/cah" >
 
         </activity>
+        <activity
+            android:name=".Niveau2_1"
+            android:label="@string/Bb"  >
+
+        </activity>
+        <activity
+            android:name=".Niveau2_2"
+            android:label="@string/Bb"  >
+
+        </activity>
+        <activity
+            android:name=".Niveau2_3"
+            android:label="@string/Bb"  >
+
+        </activity>
+        <activity
+            android:name=".Niveau3_1"
+            android:label="@string/Bb"  >
+
+        </activity>
+        <activity
+            android:name=".Niveau3_2"
+            android:label="@string/Bb"  >
+
+        </activity>
+        <activity
+            android:name=".Niveau3_3"
+            android:label="@string/Bb"  >
+
+        </activity>
+
+
+
+
+
     </application>
 
 

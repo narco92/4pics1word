@@ -155,6 +155,7 @@ public class Niveau1_3 extends Activity {
 
                             editor.commit();
 
+
                             Intent secondeActivite = new Intent(Niveau1_3.this, ChoixNiveau.class);
 
                             secondeActivite.putExtra(BUTTONS3, pop3);
@@ -238,7 +239,7 @@ public class Niveau1_3 extends Activity {
         raz11 = (TextView) findViewById(R.id.bot11);
         raz12 = (TextView) findViewById(R.id.bot12);
         appler = (ImageButton) findViewById(R.id.appler);
-        app = (ImageButton) findViewById(R.id.appler);
+        app = (ImageButton) findViewById(R.id.app);
         raz1.setOnClickListener(enrgis7);
         raz2.setOnClickListener(enrgis7);
         raz3.setOnClickListener(enrgis7);
@@ -332,7 +333,11 @@ public class Niveau1_3 extends Activity {
 //---------------------------------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     }
 
-
+    @Override
+    protected void onStop() {
+        super.onStop();
+        finish();
+    }
 
 
 
@@ -431,17 +436,12 @@ public class Niveau1_3 extends Activity {
             raz1.setEnabled(false);
             raz1.setVisibility(View.INVISIBLE);
             raz6.setEnabled(false);
-            raz6.setVisibility(View.INVISIBLE);;
+            raz6.setVisibility(View.INVISIBLE);
             app.setEnabled(false);
             appler.setEnabled(false);
 
 
-            // Uri telephone = Uri.parse("tel:0795845395");
-            // Intent secondeActivite = new Intent(Intent.ACTION_DIAL, telephone);
-            //   secondeActivite.CATEGORY_LEANBACK_LAUNCHER.toString();
 
-
-            //  startActivity(secondeActivite);
 
         }
 

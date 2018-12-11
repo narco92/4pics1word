@@ -221,11 +221,9 @@ public class Niveau1_2 extends Activity {
         premier2 = (ImageButton) findViewById(R.id.img2);
         premier3 = (ImageButton) findViewById(R.id.img3);
         premier4 = (ImageButton) findViewById(R.id.img4);
-
-        //mButton2 = (Button) findViewById(R.id.button2);
-        // mButton1 = (Button) findViewById(R.id.button1);
         appler = (ImageButton) findViewById(R.id.appler);
         app = (ImageButton) findViewById(R.id.app);
+        basee =new base(this);
         raz1 = (TextView) findViewById(R.id.bot1);
         raz2 = (TextView) findViewById(R.id.bot2);
         raz3 = (TextView) findViewById(R.id.bot3);
@@ -311,6 +309,11 @@ public class Niveau1_2 extends Activity {
 
 
 
+    }
+    @Override
+    protected void onStop() {
+        super.onStop();
+        finish();
     }
     private View.OnClickListener llll1 = new View.OnClickListener() {
 
@@ -451,7 +454,7 @@ public class Niveau1_2 extends Activity {
 
 
 
-};
+}
 
 
 

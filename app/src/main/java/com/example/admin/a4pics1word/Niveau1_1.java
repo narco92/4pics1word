@@ -8,7 +8,6 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
-//import android.support.design.widget.FloatingActionButton;
 import android.view.View;
 import android.content.Intent;
 import android.widget.Button;
@@ -35,6 +34,7 @@ public class Niveau1_1 extends Activity {
             raz1.setEnabled(true);
             raz1.setBackgroundResource(R.drawable.sa);
             x.setText("");
+            //text1.setBackgroundColor(Color.TRANSPARENT);
 
         } else {
             if (raz2.getText().toString().equals(te) && raz2.isEnabled() == false) {
@@ -148,34 +148,29 @@ public class Niveau1_1 extends Activity {
                         text5.setText(te);
                         x.setEnabled(false);
                         x.setBackgroundColor(Color.TRANSPARENT);
+                        if (text1.getText().equals("V") && text2.getText().equals("O") && text3.getText().equals("L") && text4.getText().equals("E") && text5.getText().equals("R")) {
 
 
+                            SharedPreferences preferenc =getSharedPreferences("pref", 0);
+                            SharedPreferences.Editor editor = preferenc.edit();
+                            editor.putString(bol1, "vrai");
+                            editor.commit();
 
-                            int vvv= R.string.vv;
-                            String vv=String.valueOf(vvv);
-                            int ooo= R.string.oo;
-                            String oo=String.valueOf(ooo);
-                            int lll= R.string.ll;
-                            String ll=String.valueOf(lll);
-                            int eee= R.string.ee;
-                            String ee=String.valueOf(eee);
-                            int rrr= R.string.rr;
-                            String rr=String.valueOf(rrr);
-                            if (text1.getText().equals("V") && text2.getText().equals("O") && text3.getText().equals("L") && text4.getText().equals("E") && text5.getText().equals("R")) {
+                            Toast.makeText(Niveau1_1.this, "Bravo !", Toast.LENGTH_LONG).show();
+                            //***String kkk = textv.getText().toString();
+                            Intent secondeActivite = new Intent(Niveau1_1.this, Niveau1_2.class);
+                            secondeActivite.putExtra(BUTTONS1, pop1);
+                            startActivity(secondeActivite);
 
 
-                                SharedPreferences preferenc =getSharedPreferences("pref", 0);
-                                SharedPreferences.Editor editor = preferenc.edit();
-                                editor.putString(bol1, "vrai");
-                                editor.commit();
-
-                                Toast.makeText(Niveau1_1.this, "Bravo !", Toast.LENGTH_LONG).show();
-                                //***String kkk = textv.getText().toString();
-                                Intent secondeActivite = new Intent(Niveau1_1.this, Niveau1_2.class);
-                                secondeActivite.putExtra(BUTTONS1, pop1);
-                                startActivity(secondeActivite);
-
-                            }
+                        }else{
+                            Toast.makeText(Niveau1_1.this, "Faux !", Toast.LENGTH_LONG).show();
+                            //text1.setBackgroundColor(Color.RED);
+                            //text2.setBackgroundColor(Color.RED);
+                            //text3.setBackgroundColor(Color.RED);
+                            //text4.setBackgroundColor(Color.RED);
+                            //text5.setBackgroundColor(Color.RED);
+                        }
 
 
                     }
@@ -190,7 +185,6 @@ public class Niveau1_1 extends Activity {
 
     ;
 
-    //LinearLayout marzouk=null;
     TextView textv = null;
     TextView text = null;
     TextView text1 = null;
@@ -200,7 +194,7 @@ public class Niveau1_1 extends Activity {
     TextView text5 = null;
     ImageButton appler=null;
     ImageButton app=null;
-    ImageButton razx=null;
+
     TextView raz1 = null;
     TextView raz2 = null;
     TextView raz3 = null;
@@ -213,10 +207,7 @@ public class Niveau1_1 extends Activity {
     TextView raz10 = null;
     TextView raz11 = null;
     TextView raz12 = null;
-    // TextView ba = null;
 
-    Button mButton2 = null;
-    Button mButton1 = null;
     ImageButton premier2=null;
     ImageButton premier3=null;
     ImageButton premier4=null;
@@ -226,20 +217,14 @@ public class Niveau1_1 extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.niveau1_1);
         textv = (TextView) findViewById(R.id.textv);
-        //text = (TextView) findViewById(R.id.ite0);
         text1 = (TextView) findViewById(R.id.ite1);
         text2 = (TextView) findViewById(R.id.ite2);
         text3 = (TextView) findViewById(R.id.ite3);
         text4 = (TextView) findViewById(R.id.ite4);
         text5 = (TextView) findViewById(R.id.ite5);
-
         premier2 = (ImageButton) findViewById(R.id.img2);
         premier3 = (ImageButton) findViewById(R.id.img3);
         premier4 = (ImageButton) findViewById(R.id.img4);
-
-
-
-        // ba = (TextView) findViewById(R.id.bas1);
 
         raz1 = (TextView) findViewById(R.id.bot1);
         raz2 = (TextView) findViewById(R.id.bot2);
@@ -258,7 +243,6 @@ public class Niveau1_1 extends Activity {
         appler = (ImageButton) findViewById(R.id.appler);
         app = (ImageButton) findViewById(R.id.app);
 
-
         raz1.setOnClickListener(enrgis7);
         raz2.setOnClickListener(enrgis7);
         raz3.setOnClickListener(enrgis7);
@@ -272,6 +256,7 @@ public class Niveau1_1 extends Activity {
         raz11.setOnClickListener(enrgis7);
         raz12.setOnClickListener(enrgis7);
 
+        basee =new base(this);
         text1.setOnClickListener(llll1);
         text2.setOnClickListener(llll1);
         text3.setOnClickListener(llll1);
@@ -371,7 +356,11 @@ public class Niveau1_1 extends Activity {
 
     }
 
-
+    @Override
+    protected void onStop() {
+        super.onStop();
+        finish();
+    }
 //******************************************************************************************************************************************
 
 
@@ -453,6 +442,9 @@ public class Niveau1_1 extends Activity {
         }
 
     };
+
+
+
 
 
 

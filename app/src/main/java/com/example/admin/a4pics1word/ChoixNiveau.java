@@ -85,8 +85,7 @@ public class ChoixNiveau extends Activity {
         rout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent secondeActivite = new Intent(ChoixNiveau.this, PrincipalActivity.class);
-                startActivity(secondeActivite);
+                finish();
             }
         });
         txt1.setOnClickListener(new View.OnClickListener() {
@@ -99,23 +98,23 @@ public class ChoixNiveau extends Activity {
         txt2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent secondeActivite = new Intent(ChoixNiveau.this, Niveau2_1.class);
+                startActivity(secondeActivite);
             }
         });
         txt3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-        }
-        });
-        txt4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
+                Intent secondeActivite = new Intent(ChoixNiveau.this, Niveau3_1.class);
+                startActivity(secondeActivite);
             }
         });
     }
-};
+    protected void onStop() {
+        super.onStop();
+        finish();
+    }
+}
 //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\\
 //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\\
 //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\\

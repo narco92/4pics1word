@@ -15,8 +15,8 @@
         android:layout_marginLeft="20dp"
         android:background="@drawable/bombe"
         app:layout_constraintStart_toEndOf="@+id/appler"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="0dp" />
 
     />
 
@@ -26,8 +26,8 @@
         android:layout_height="56dp"
         android:background="@drawable/solution"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="0dp" />
 
     <TextView
         android:id="@+id/textv"
@@ -317,8 +317,8 @@
         android:gravity="center"
         android:padding="10dp"
         android:text="@string/aa"
-
         android:textColor="@android:color/background_light"
+
         android:textSize="18dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/bot7"

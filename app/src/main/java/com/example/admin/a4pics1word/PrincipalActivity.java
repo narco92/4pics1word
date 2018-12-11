@@ -113,7 +113,8 @@ public class PrincipalActivity extends Activity {
                         "\n" +
                         "Le jeu 4 Photos 1 Mot est entièrement gratuit, des puzzles en français, pour des moments de plaisir infini.\n" +
                         "\n" +
-                        "★ Beaucoup de nouveaux niveaux en français!\n" +
+                        "★ Beaucoup de nouv" +
+                                "eaux niveaux en français!\n" +
                         "★ Comment jouer ? Regardez 4 images et devinez le mot qui les relie. Pour chaque mot que vous devinez, vous gagnez des pièces qui vous aideront à atteindre de nouveaux niveaux.\n" +
                         "★ Jouez à des centaines de puzzles qui deviendront plus difficiles comme vous avancez.\n" +
                         "★ Mode défi original avec des images cachées. Utilisez vos pièces avec sagesse pour les révéler. \n" +
@@ -168,8 +169,12 @@ public class PrincipalActivity extends Activity {
         SharedPreferences preferences =getSharedPreferences("pref", 0);
         SharedPreferences.Editor editor = preferences.edit();
         editor.putString(Niveau1_3.FAV, "00");
-
+        editor.putString(Niveau2_1.bol4, "00");
+        editor.putString(Niveau2_2.bol5, "00");
         editor.putString(Niveau1_2.bol2, "00");
+        editor.putString(Niveau2_3.bol6, "00");
+        editor.putString(Niveau3_1.bol7, "00");
+        editor.putString(Niveau3_2.bol8, "00");
         editor.putString(Niveau1_1.bol1, "00");
         editor.putString(Niveau1_3.bol3, "00");
 
@@ -179,9 +184,10 @@ public class PrincipalActivity extends Activity {
         try{
         if(mps.isPlaying()==true){
         mps.stop();}}catch (Exception e){e.printStackTrace();}
+
         finish();
 
     }
 
 
-};
+}
