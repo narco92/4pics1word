@@ -47,21 +47,21 @@ public class ChoixNiveau extends Activity {
         SharedPreferences preferences = getSharedPreferences("pref", 0);
         String laa = preferences.getString(Niveau1_3.FAV, "00");
 
-        float jjjkj = Float.valueOf(laa);
-        jjjkj = jjjkj + 10;
-        String jjjjj = String.valueOf(jjjkj);
-        scor.setText(jjjjj);
-        if (jjjkj >=30 && jjjkj<60) {
+        float score = Float.valueOf(laa);
+        score = score + 10;
+        String scoreText = String.valueOf(score);
+        scor.setText(scoreText);
+        if (score >=30 && score <60) {
             txt2.setTextColor(0XFF008577);
             txt2.setEnabled(true);
         }
-        if (jjjkj >=50&& jjjkj<80 ) {
+        if (score >=50&& score <80 ) {
             txt2.setTextColor(0XFF008577);
             txt2.setEnabled(true);
             txt3.setTextColor(0XFF008577);
             txt3.setEnabled(true);
         }
-        if (jjjkj >=80&& jjjkj<110) {
+        if (score >=80&& score <110) {
             txt2.setTextColor(0XFF008577);
             txt2.setEnabled(true);
             txt3.setTextColor(0XFF008577);
@@ -69,7 +69,7 @@ public class ChoixNiveau extends Activity {
             txt4.setTextColor(0XFF008577);
             txt4.setEnabled(true);
         }
-        if (jjjkj >= 110) {
+        if (score >= 110) {
             txt2.setTextColor(0xFF00FF00);
             txt2.setEnabled(true);
             txt3.setTextColor(0xFF00FF00);
