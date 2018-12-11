@@ -22,7 +22,7 @@ public class Niveau1_3 extends Activity {
     public final static int CHOOSE_BUTTON_REQUEST =3 ;
     public final static String BUTTONS3 = "sdz.chapitreTrois.intent.example.Boutons";
     int not=15;
-    public void saibi(TextView x) {
+    public void depiler(TextView x) {
         String te = x.getText().toString();
         if (raz1.getText().toString().equals(te) && raz1.isEnabled() == false) {
             raz1.setEnabled(true);
@@ -122,7 +122,7 @@ public class Niveau1_3 extends Activity {
 
     }
 
-    public void toggle(TextView x) {
+    public void empiler(TextView x) {
 
         String te = x.getText().toString();
 
@@ -396,19 +396,19 @@ public class Niveau1_3 extends Activity {
             switch (v.getId()) {
 
                 case R.id.ite1:
-                    saibi(text1);
+                    depiler(text1);
                     break;
                 case R.id.ite2:
-                    saibi(text2);
+                    depiler(text2);
                     break;
                 case R.id.ite3:
-                    saibi(text3);
+                    depiler(text3);
                     break;
                 case R.id.ite4:
-                    saibi(text4);
+                    depiler(text4);
                     break;
                 case R.id.ite5:
-                    saibi(text5);
+                    depiler(text5);
                     break;
             }
         }
@@ -423,40 +423,40 @@ public class Niveau1_3 extends Activity {
             switch (v.getId()) {
 
                 case R.id.bot1:
-                    toggle(raz1);
+                    empiler(raz1);
                     break;
                 case R.id.bot2:
-                    toggle(raz2);
+                    empiler(raz2);
                     break;
                 case R.id.bot3:
-                    toggle(raz3);
+                    empiler(raz3);
                     break;
                 case R.id.bot4:
-                    toggle(raz4);
+                    empiler(raz4);
                     break;
                 case R.id.bot5:
-                    toggle(raz5);
+                    empiler(raz5);
                     break;
                 case R.id.bot6:
-                    toggle(raz6);
+                    empiler(raz6);
                     break;
                 case R.id.bot7:
-                    toggle(raz7);
+                    empiler(raz7);
                     break;
                 case R.id.bot8:
-                    toggle(raz8);
+                    empiler(raz8);
                     break;
                 case R.id.bot9:
-                    toggle(raz9);
+                    empiler(raz9);
                     break;
                 case R.id.bot10:
-                    toggle(raz10);
+                    empiler(raz10);
                     break;
                 case R.id.bot11:
-                    toggle(raz11);
+                    empiler(raz11);
                     break;
                 case R.id.bot12:
-                    toggle(raz12);
+                    empiler(raz12);
                     break;
             }
 
