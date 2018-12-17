@@ -1,16 +1,20 @@
 package com.example.admin.a4pics1word;
 
 import android.app.Activity;
+import android.content.ContentValues;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 
-public class ChoixNiveau extends Activity {
 
+public class ChoixNiveau extends Activity {
+    SQLiteOpenHelper basee;
 
     ImageButton rout = null;
     TextView scor = null;
@@ -25,6 +29,7 @@ public class ChoixNiveau extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.choix_niveau);
+
 //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\\
 //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\\
 //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\\
@@ -36,6 +41,8 @@ public class ChoixNiveau extends Activity {
         txt6 = (TextView) findViewById(R.id.text6);
         scor = (TextView) findViewById(R.id.textnom);
         rout = (ImageButton) findViewById(R.id.fab1);
+
+        basee =new base(this);
 //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\\
 //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\\
 ////%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\\
@@ -91,8 +98,16 @@ public class ChoixNiveau extends Activity {
         txt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+ String var = "VOLER";
+                SQLiteDatabase db=basee.getWritableDatabase();
+                ContentValues cv=new ContentValues();
+                cv.put("id", 4);
+                cv.put("nom", var);
+                db.insert("etudiants", null, cv);
                 Intent secondeActivite = new Intent(ChoixNiveau.this, Niveau1_1.class);
                 startActivity(secondeActivite);
+
             }
         });
         txt2.setOnClickListener(new View.OnClickListener() {

@@ -15,13 +15,19 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import android.database.sqlite.SQLiteDatabase;
+import android.database.Cursor;
+
+
 
 
 
 
 @TargetApi(Build.VERSION_CODES.GINGERBREAD)
 public class Niveau1_1 extends Activity {
-    SQLiteOpenHelper basee;
+    //SQLiteOpenHelper basee;
+    String textVerif;
+    String nom;
     public String pop1=null;
     public final static String bol1 = "kabyl";
     public final static int CHOOSE_BUTTON_REQUEST1 = 0;
@@ -181,13 +187,12 @@ public void setTransparent(){
 
 
         }
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-private void verify() {
-    if (text1.getText().equals("V")
-            && text2.getText().equals("O")
-            && text3.getText().equals("L")
-            && text4.getText().equals("E")
-            && text5.getText().equals("R")) {
+public void verify() {
+
+    textVerif =text1.getText().toString().concat(text2.getText().toString()).concat(text3.getText().toString()).concat(text4.getText().toString()).concat(text5.getText().toString());
+    if (nom.equals(textVerif))  {
 
 
         text1.setBackgroundColor(Color.GREEN);		 text2.setBackgroundColor(Color.GREEN);		 text3.setBackgroundColor(Color.GREEN);
@@ -254,6 +259,7 @@ private void verify() {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.niveau1_1);
+        SQLiteOpenHelper basee;
         textv = (TextView) findViewById(R.id.textv);
         text1 = (TextView) findViewById(R.id.ite1);
         text2 = (TextView) findViewById(R.id.ite2);
@@ -300,6 +306,14 @@ private void verify() {
         text3.setOnClickListener(llll1);
         text4.setOnClickListener(llll1);
         text5.setOnClickListener(llll1);
+        SQLiteDatabase db=basee.getWritableDatabase();
+
+
+        String sql="SELECT * FROM etudiants WHERE id=4";
+        Cursor c=db.rawQuery(sql,null);
+        c.moveToFirst();
+         nom=c.getString(1);
+
 
 
 
